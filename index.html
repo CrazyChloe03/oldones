@@ -3,7 +3,7 @@
 
 <body>
 
-  <img id="myImage" src="picture.jpg" alt="Picture" style="width: 500px; height: 500px;">
+  <img id="myImage" src="your_picture.jpg" alt="Picture" style="width: 500px; height: 500px;">
 
   <audio id="myAudio" src="carol.mp3"></audio>
 
@@ -11,6 +11,11 @@
     document.getElementById('myImage').addEventListener('click', function() {
       var audio = document.getElementById('myAudio');
       audio.play();
+    });
+
+    window.addEventListener('beforeunload', function(event) {
+      event.preventDefault();
+      return 'Are you sure you want to leave?';
     });
   </script>
 
