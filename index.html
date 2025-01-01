@@ -13,9 +13,11 @@
       audio.play();
     });
 
-    window.onbeforeunload = function() {
-      return confirm('Are you sure you want to leave?');
-    };
+    var audioElement = document.getElementById('myAudio');
+    audioElement.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+    });
   </script>
 
 </body>
