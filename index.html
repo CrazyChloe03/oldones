@@ -14,8 +14,7 @@
     });
 
     window.addEventListener('beforeunload', function(event) {
-      event.preventDefault();
-      return 'Are you sure you want to leave?';
+      event.returnValue = 'Are you sure you want to leave?';
     });
   </script>
 
